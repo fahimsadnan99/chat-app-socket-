@@ -1,0 +1,19 @@
+.navbarWrapper {
+    background-color: rgb(63, 13, 70);
+}
+
+.navbarChild {
+    @apply  lg:w-[90%] mx-auto flex justify-between items-center
+}
+
+.navbarChild p {
+    @apply text-white font-semibold text-2xl
+}
+
+.navbarUl {
+    @apply flex items-center justify-center space-x-5 
+}
+
+.navbarLi {
+    @apply text-white text-xl p-2
+}
