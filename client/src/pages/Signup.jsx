@@ -4,14 +4,20 @@ import { AiOutlineCloudUpload } from "react-icons/ai";
 import { Formik,Field,Form,FieldArray ,ErrorMessage }  from 'formik'
 import ChildComponent from "../components/common/ChildComponent";
 import {initialValues,validationSchema} from "../components/common/ValidationForm"
+import axios from "axios"
+import { SuccessMsg,ErrorMsg } from "../Util/AllMessage";
+
 
 const Signup = () => {
   const [file, setFile] = useState(null);
 
 
   const onsubmit = (e)=>{
-  
- console.log(e);
+   axios.post("http://localhost:5000/signup",e)
+   .then(res=>{
+    SuccessMsg(res.data?.message)
+   })
+   .catch(err => ErrorMessage(err.data?.message))
   }
 
   return (

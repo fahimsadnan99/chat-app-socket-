@@ -3,6 +3,7 @@ import App  from "./App"
 import Home from "./pages/Home"
 import Signup from "./pages/Signup"
 import Signin from "./pages/Signin"
+import PrivateRoute from "./components/common/PrivateRoute"
 
 
 const Router = createBrowserRouter([
@@ -12,7 +13,7 @@ const Router = createBrowserRouter([
         children : [
             {
                 path : "/",
-                element : <Home></Home>
+                element : <PrivateRoute><Home></Home></PrivateRoute> 
             },
             {
                 path : "singup",
@@ -24,7 +25,7 @@ const Router = createBrowserRouter([
             },
             {
                 path : "*",
-                element : <Home></Home>
+                element :<PrivateRoute> <Home></Home></PrivateRoute>
             }
         ]
     }
